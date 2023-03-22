@@ -1,0 +1,28 @@
+version: '3.5'
+services:
+  database:
+    build:
+      context: .
+      dockerfile: DBDockerfile
+    container_name: postgresdb
+    image: 'postgres'
+    environment:
+      - POSTGRES_PASSWORD=ratestask
+    ports:
+      - 5432:5432
+    volumes:
+      - .rates.sql:/docker-entrypoint-initdb.d/
+
+
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment: # or use env_file as you did above
+      USER: postgres
+      PASS: ratestask
+      HOST: database     # This is the name of the database service in this file above
+      PORT: 5432
+      DATABASE: postgres
+    depends_on:
+      - database
