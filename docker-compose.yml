@@ -7,11 +7,9 @@ services:
     container_name: postgresdb
     image: 'postgres'
     environment:
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=ratestask
-    ports:
-      - 5432:5432
-    volumes:
-      - .rates.sql:/docker-entrypoint-initdb.d/
+      - POSTGRES_DB=postgres
 
 
   flask:
@@ -26,3 +24,4 @@ services:
       DATABASE: postgres
     depends_on:
       - database
+    restart: unless-stopped
