@@ -27,7 +27,7 @@ def get_rate() -> List[dict]:
     :url: [host address]/rates?date_from=2016-01-01&date_to=2016-01-30&origin=CNSGH&destination=north_europe_main
     """
     result_list = []
-    origin_code, destination_code, date_to, date_from = get_context_data(request)
+    origin_code, destination_code, date_to, date_from = get_context_data()
 
     if not all([origin_code, destination_code, date_to, date_from]):
         return [{'error': "Parameter missing: origin/destination/date_to/date_from"}]

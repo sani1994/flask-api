@@ -1,10 +1,9 @@
 from flask import request
 
 
-def get_context_data(request: request) -> tuple:
+def get_context_data() -> tuple:
     """
     get context data from parameter
-    :param request:
     :return: tuple of context data
     """
     origin = request.args.get('origin')
