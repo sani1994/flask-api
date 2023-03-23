@@ -34,8 +34,12 @@ def get_rate() -> List[dict]:
 
     if len(origin_code) > CODE_LENGTH:
         origin_code = connection.get_object(get_code_from_region_slug_sql.format(region_slug=origin_code))
+        if not origin_code:
+            return [{'error': 'Origin code not found'}]
     if len(destination_code) > CODE_LENGTH:
         destination_code = connection.get_object(get_code_from_region_slug_sql.format(region_slug=destination_code))
+        if not destination_code:
+            return [{'error': 'Destination code not found'}]
 
     price_query = get_price_sql.format(origin=origin_code, destination_code=destination_code, date_from=date_from,
                                        date_to=date_to)
