@@ -2,8 +2,8 @@ version: '3.5'
 services:
   database:
     build:
-      context: .
-      dockerfile: DBDockerfile
+      context: ..
+      dockerfile: docker-files/DBDockerfile
     container_name: postgresdb
     image: 'postgres'
     environment:
@@ -14,8 +14,8 @@ services:
 
   flask:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker-files/Dockerfile
     environment: # or use env_file as you did above
       USER: postgres
       PASS: ratestask
