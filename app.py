@@ -51,7 +51,7 @@ def get_rate() -> List[dict]:
         day_price_dict = {}
         day, avg_price, count = data
         day_price_dict['day'] = str(day)
-        day_price_dict['average_price'] = int(avg_price) if count <= 3 else 'null'
+        day_price_dict['average_price'] = int(avg_price) if count >= 3 else None
         result_list.append(day_price_dict)
     return result_list
 
