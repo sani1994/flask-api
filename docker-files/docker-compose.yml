@@ -16,10 +16,10 @@ services:
     build:
       context: ..
       dockerfile: docker-files/Dockerfile
-    environment: # or use env_file as you did above
+    environment:
       USER: postgres
       PASS: ratestask
-      HOST: database     # This is the name of the database service in this file above
+      HOST: database
       PORT: 5432
       DATABASE: postgres
     depends_on:
