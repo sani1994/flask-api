@@ -16,8 +16,8 @@ This project is built in Python and flask framework<br />
         * execute `run.sh` if shows permission denied please give execute permission to `run.sh`. ex:`chmod +x run.sh` [it will create virtual environment and install the requirements]
     <br/>
     **Docker run:** <br/>
-        * clone project.
-        * go to `docker-files` directory. [cd docker-files]
-        * docker-compose build
-        * dcoker-compose up
+        * clone project.<br/>
+        * go to `docker-files` directory. [cd docker-files]<br/>
+        * docker-compose build<br/>
+        * dcoker-compose up<br/>
     
