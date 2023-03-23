@@ -31,7 +31,7 @@ jobs:
     - name: Mypy type check
       run: |
         pip install mypy
-        mypy app
+        mypy app.py
 
     - name: Pytest unit tests
       run: |
